@@ -1,0 +1,31 @@
+﻿@model Mvc.Models.UserModel
+@{
+    ViewData["Title"] = "New User";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<h2>Details</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.TextBoxFor(b => b.Name, new {placeholder = "Name" })
+    </div>
+    <br/>
+    <div>
+        @Html.TextBoxFor(b => b.PhoneNo, new {placeholder = "Phone No" })
+    </div>
+    <br/>
+    <div>
+        @Html.TextBoxFor(b => b.Address, new {placeholder = "Address" })
+    </div>
+    <br/>
+    <div>
+        @Html.TextBoxFor(b => b.CreatedAt, new {placeholder = "Created At" })
+    </div>
+    <br/>
+    <button class="btn btn-success" type ="submit">Add New User</button>
+    <div> |
+        <a asp-action="Index">Back to List</a>
+    </div>
+}
